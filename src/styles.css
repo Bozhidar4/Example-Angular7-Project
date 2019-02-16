@@ -9,8 +9,13 @@
 button[type="submit"]{
     background-color: #67dfd4;
     color: #fff;
-
 }
+
+button[type="reset"]{
+    background-color: #fdabbd;
+    color: #fff;
+}
+
 .jumbotron{
     background-color: #fff;
     padding-top: 32px;

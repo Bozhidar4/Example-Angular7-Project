@@ -1,6 +1,7 @@
 <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
-  <div *ngIf="service.formData.EmployeeID">
-    <input class="hidden" name="EmployeeID" #EmployeeID="ngModel" [(ngModel)]="service.formData.EmployeeID">
+  <div *ngIf="service.formData.EmployeeID" class="form-group">
+    <label>ID</label>
+    <input class="hidden form-control" name="EmployeeID" #EmployeeID="ngModel" [(ngModel)]="service.formData.EmployeeID">
   </div>
   <div class="form-group">
     <label>FIRST NAME</label>
@@ -28,5 +29,6 @@
   </div>
   <div class="form-group">
     <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">SUBMIT</button>
+    <button type="reset" class="btn btn-lg btn-block">RESET</button>
   </div>
 </form>
