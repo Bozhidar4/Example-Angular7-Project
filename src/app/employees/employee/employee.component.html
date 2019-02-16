@@ -1,0 +1,32 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+  <div *ngIf="service.formData.EmployeeID">
+    <input class="hidden" name="EmployeeID" #EmployeeID="ngModel" [(ngModel)]="service.formData.EmployeeID">
+  </div>
+  <div class="form-group">
+    <label>FIRST NAME</label>
+    <input name="FirstName" #FirstName="ngModel" [(ngModel)]="service.formData.FirstName" class="form-control" required>
+    <div class="validation-error" *ngIf="FirstName.invalid && FirstName.touched">This field is required</div>
+  </div>
+  <div class="form-group">
+    <label>LAST NAME</label>
+    <input name="LastName" #LastName="ngModel" [(ngModel)]="service.formData.LastName" class="form-control" required>
+    <div class="validation-error" *ngIf="LastName.invalid && LastName.touched">This field is required</div>
+  </div>
+  <div class="form-group">
+    <label>POSITION</label>
+    <input name="Title" #TitleName="ngModel" [(ngModel)]="service.formData.Title" class="form-control">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>CITY</label>
+      <input name="City" #City="ngModel" [(ngModel)]="service.formData.City" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>PHONE NUMBER</label>
+      <input name="HomePhone" #HomePhone="ngModel" [(ngModel)]="service.formData.HomePhone" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">SUBMIT</button>
+  </div>
+</form>
